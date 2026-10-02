@@ -1,0 +1,23 @@
+{
+  "makespan_h": 9.860111340526016,
+  "qc_productivity": 30.82074896708983,
+  "qc_productivity_max": 33.75,
+  "berth_productivity": 121.70247967362025,
+  "qc_wait_share": 0.08549321817233346,
+  "qc_wait_per_move_s": 9.987096651186695,
+  "empty_m_per_move": 151.905,
+  "loaded_m_per_move": 332.93,
+  "asc_wait_per_move_s": 30.218402826083494,
+  "messages_per_job": 31.5825,
+  "options_per_decision": 2.525,
+  "single_choice_share": 0.2125,
+  "busy_assigned_share": 0.18,
+  "jobs_done": 1200,
+  "agv_loaded_travel": 0.24341199309346742,
+  "agv_empty_travel": 0.13838727508994236,
+  "agv_handling": 0.20637433804565797,
+  "agv_wait_qc": 0.31351191817382046,
+  "agv_wait_asc": 0.08513089249330312,
+  "agv_idle": 0.013183583103808696,
+  "wall_time_s": 0.11477919993922114
+}

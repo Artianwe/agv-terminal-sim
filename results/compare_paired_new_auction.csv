@@ -1,0 +1,7 @@
+n_agv,kpi,versus,policy,difference,ci95,significant
+12,qc_productivity,nearest,auction_ra,-0.0031811383448012267,0.1569894915566345,False
+12,empty_m_per_move,nearest,auction_ra,8.030750000000001,3.5899657575410537,True
+12,qc_wait_per_move_s,nearest,auction_ra,0.010972143575478733,0.5915165835640595,False
+12,qc_productivity,auction,auction_ra,-0.06221077523913969,0.2024487450626316,False
+12,empty_m_per_move,auction,auction_ra,32.88783333333333,3.5413910384490017,True
+12,qc_wait_per_move_s,auction,auction_ra,0.23741752829162702,0.7675467435788347,False

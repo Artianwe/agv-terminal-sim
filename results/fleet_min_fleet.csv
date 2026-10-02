@@ -1,0 +1,6 @@
+policy,target,min_fleet_mean,min_fleet_conservative
+auction,30.375,12,12
+auction_ra,30.375,12,12
+central,30.375,14,14
+fifo,30.375,12,14
+nearest,30.375,12,12

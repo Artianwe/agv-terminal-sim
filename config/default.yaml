@@ -1,0 +1,45 @@
+# Default scenario: one large vessel worked by 4 quay cranes at an automated terminal.
+# Units: seconds and metres. Triangular distributions are written [min, mode, max].
+# Every value is an assumption -> see docs/PROJECT_GUIDE.md "Parameter table" for sources.
+
+# --- Vessel & quay cranes ---
+n_qc: 4
+moves_per_qc: 300
+discharge_fraction: 0.5
+phase_pattern: staggered        # staggered | discharge_first
+qc_cycle_s: [70, 90, 130]       # mean 96.7 s + 10 s hand-over -> upper bound 33.8 moves/QC-h
+qc_handover_s: 10
+
+# --- Layout ---
+qc_spacing_m: 80
+n_blocks: 8
+block_pitch_m: 40
+quay_to_yard_m: 150
+route_factor: 1.3
+
+# --- AGVs ---
+n_agv: 12
+agv_speed_mps: 5.0
+leg_overhead_s: 20
+travel_cv: 0.10
+congestion_alpha: 0.15          # BPR function (Bureau of Public Roads, 1964)
+congestion_beta: 4.0
+congestion_capacity: 20
+
+# --- Yard cranes (ASC) ---
+asc_handover_s: [20, 30, 45]
+asc_store_s: [40, 60, 90]
+asc_retrieve_s: [40, 60, 90]
+
+# --- Dispatching ---
+policy: auction_ra              # fifo | nearest | central | auction | auction_ra
+lookahead: 3
+max_commit: 1
+empty_weight: 0.2
+predictor: calibrated           # naive | calibrated
+learn_rate: 0.05
+risk_z: 2.5                     # chosen by `python run.py tune` (tuning seeds 101-110)
+adaptive_commit: true
+
+# --- Experiment ---
+seed: 1
