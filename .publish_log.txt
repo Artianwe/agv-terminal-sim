@@ -1,3 +1,0 @@
-$ git init -b main
-Initialized empty Git repository in D:/PROJECTS FOR CV/agv-terminal-sim/.git/
-$ git add -A

@@ -12,3 +12,4 @@ results/laptop_run_log.txt
 report/*.aux
 report/*.log
 report/*.out
+.publish_log.txt

@@ -26,6 +26,12 @@ Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_01Y529FUyHzEECWsKkJEb5iB"""
 
 
+UPDATE_MESSAGE = """Update Project A files
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_01Y529FUyHzEECWsKkJEb5iB"""
+
+
 def log(msg: str) -> None:
     print(msg, flush=True)
     with open(LOG, "a", encoding="utf-8") as fh:
@@ -47,12 +53,16 @@ def git(*args: str, check: bool = True) -> subprocess.CompletedProcess:
 
 def main() -> None:
     LOG.write_text("", encoding="utf-8")
-    if not (ROOT / ".git").exists():
+    first = not (ROOT / ".git").exists()
+    if first:
         git("init", "-b", "main")
+    # never publish this log (older versions of .gitignore did not list it)
+    git("rm", "--cached", "--quiet", "--ignore-unmatch", LOG.name)
     git("add", "-A")
     git("status", "--short")
     if git("diff", "--cached", "--quiet", check=False).returncode != 0:
-        git("commit", "-m", MESSAGE)
+        has_commits = git("rev-parse", "--verify", "HEAD", check=False).returncode == 0
+        git("commit", "-m", UPDATE_MESSAGE if has_commits else MESSAGE)
     else:
         log("Nothing new to commit.")
     if git("remote", "get-url", "origin", check=False).returncode != 0:
