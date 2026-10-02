@@ -20,16 +20,10 @@ MESSAGE = """Project A v1.0.0: risk-aware AGV dispatching at an automated contai
 
 SimPy model of quay cranes, AGVs and stacking cranes; five dispatching policies incl. the new
 risk-aware two-way auction; fleet sizing, sensitivity, ablation and tuning experiments; 23 tests;
-report (report/report.pdf).
-
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_01Y529FUyHzEECWsKkJEb5iB"""
+report (report/report.pdf)."""
 
 
-UPDATE_MESSAGE = """Update Project A files
-
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
-Claude-Session: https://claude.ai/code/session_01Y529FUyHzEECWsKkJEb5iB"""
+UPDATE_MESSAGE = "Update Project A files"
 
 
 def log(msg: str) -> None:
